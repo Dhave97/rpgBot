@@ -260,4 +260,4 @@ def handle_creation_steps(message):
 def mostra_scheda(message):
     user_id = message.from_user.id
     conn, c = get_db()
-    c.execute("SELECT name,
+    c.execute("SELECT name, razza, classe, descrizione, level, exp, money, hp, forza, agilita, difesa FROM characters WHERE user_id = ?", (user_id,))
